@@ -1,0 +1,264 @@
+.head{
+  width: 100%;
+  height: 15vh;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+nav{
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav .h1{
+  width: 70%;
+  display: flex;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+.h1 h1{
+  margin-right: 10px;
+}
+nav ul {
+  display: flex;
+  justify-content: end;
+}
+nav ul li{
+  margin-right: 15px;
+  list-style: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+.inp-filt{
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+input[type="text"]{
+  background: rgb(241, 241, 241);
+  outline: none;
+  border: thin;
+  padding: 7px 50px;
+}
+.header-search{
+  cursor: pointer;
+  padding: 7px 10px;
+  background-color: chartreuse;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+}
+.filter{
+  height: 30px;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+}
+.filter select{
+  width: 100%;
+  height: 30px;  
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border:none;
+}
+.list-items{
+  display: flex;
+  justify-content: end;
+}
+.h1{
+  width: 50%;
+  padding: 0 0 0 5px;
+}
+.cart{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.batch{
+  width: 15px;
+  height: 15px;
+  background-color: yellow;
+  border-radius: 50%;
+}
+
+/* Container CSS */
+.container{
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom:10px ;
+}
+.text-container{
+  width: 30%;
+}
+.text-container h1{
+  text-align: center;
+}
+.inner-container{
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 90%;
+  transition: 0.5s;
+}
+.inner-container:hover{
+  width: 51%;
+  height: 91%;
+  box-shadow: 5px 5px 5px grey;
+}
+.inner-container img{
+  width: 100%;
+  height: 100%;
+}
+/* Cart box */
+.carts{
+  width: 100%;
+  height: 130%;
+  background:radial-gradient(white,rgb(253, 231, 215));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.items{
+  margin: 10px;
+  height: 400px;
+  width: 255px;
+  border: 1px solid transparent; 
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.5s;
+}
+.items:hover{
+  border: 1px solid; 
+  transform: scale(1.1);
+}
+.product-image{
+  width: 99%;
+  height: 85%;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.cart-image{
+  width: 100%;
+  height: 80%;
+}
+.cart-image img{
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid;
+}
+.image-description{
+  width: 100%;
+  height: 30%;
+
+}
+.image-description h3,p{
+  margin: 5px 0 0 5px;
+  padding: 0;
+}
+.button-description{
+  width: 100%;
+  height: 15%;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+}
+.button-description:hover{
+  background-color:chartreuse;
+  color: black;
+}
+
+/* deals */
+.deal-h1{
+  background:radial-gradient(white,rgb(253, 231, 215));
+}
+.deal-h1 h1{
+  
+  margin:0 0 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.deals{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+/* footer */
+.footer{
+  width: 100%;
+  height: 18%;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0 5px 0;
+}
+.end-div{
+  text-align: center;
+  margin:0 10px 0 0 ;
+  padding: 10px 25px;
+}
+.footer-h1{
+  padding-left: 20px;
+}
+.footer-h1 h1{
+  margin: 0;
+}
+.subscribe{
+  outline: none;
+  border: none;
+  background-color: chartreuse;
+  padding: 7px 15px;
+  font-weight: 700;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  cursor: pointer;
+}
+.totop{
+  width: 100%;
+  height: 30px;
+  background-color: rgb(58, 58, 58);
+  text-align: center;
+}
+.totop a{
+  text-decoration: none;
+  color: white;
+}
+.copyright{
+  margin: 0 0;
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding:20px;
+}
+/* Cart */
+.cart-page{
+  width: 30%;
+  height: 500px;
+  background-color: aqua;
+}
+.cart-page h1{
+  text-align: center;
+  margin: 0 0;
+}
