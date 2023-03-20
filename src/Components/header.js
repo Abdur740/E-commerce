@@ -1,8 +1,25 @@
 import {FaCartArrowDown} from "react-icons/fa";
+import Creatingcontext from "./creatingcontext"
+import { useContext } from "react";
 
-
+let set=0;
 const Header = (props) => {
-   
+   const showCart = () => {
+
+      if(set==0)
+      {
+         document.getElementById("cartpage").style.display = "block";
+         console.log("working")
+         set=1; 
+      }
+      else
+      {
+         document.getElementById("cartpage").style.display = "none";
+         set=0;
+      }
+      
+   }
+   const [data,setData] = useContext(Creatingcontext)
     return (
     <div class="head">
              <nav>
@@ -29,9 +46,9 @@ const Header = (props) => {
                     <li>Brands</li>
                     <li>Deals</li>
                     <li>Contact</li>
-                    <FaCartArrowDown className="cart"></FaCartArrowDown>
+                    <FaCartArrowDown id="cart" className="cart" onClick = {() => showCart()}></FaCartArrowDown>
                 </ul>
-                <div class="batch"></div>
+                <div class="batch">{data.length}</div>
                 </div>
              </nav>
     </div>

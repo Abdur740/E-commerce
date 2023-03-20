@@ -2,6 +2,9 @@ import Container from './container';
 import Cartitem from './cartitems';
 import Deals from './deals';
 import Footer from './footer';
+import { useContext} from 'react';
+import Creatingcontext from './creatingcontext'
+
 
 const cartitems=[{"id":1,"image":"glass1.jpg","name":"Rayban Sunglasses","price":"₹2,499"},
 {"id":2,"image":"glass2.jpg","name":"Carrera Sunglasses","price":"₹4,499"},
@@ -14,13 +17,33 @@ const cartitems=[{"id":1,"image":"glass1.jpg","name":"Rayban Sunglasses","price"
 {"id":9,"image":"shoe6.jpg","name":"Alpha","price":"₹2,499"},
 {"id":10,"image":"shoe4.jpg","name":"Strings","price":"₹2,499"},
 ]
-const deals = [{"id":11,"image":"deal1.jpg","name":"Sun Glasses+Shirt","price":"₹2,499"},
-{"id":12,"image":"deal2.jpg","name":"Women T-Shirts","price":"₹1,499"},
-{"id":13,"image":"deal3.jpg","name":"Carrera Sunglasses+T-Shirts","price":"₹3,499"},
-{"id":14,"image":"deal4.jpg","name":"MiltonT shirt","price":"₹6,099"},
-{"id":15,"image":"deal5.jpg","name":"Black Hoodie","price":"₹3,499"}]
+const deals = [{"id":1,"image":"deal1.jpg","name":"Sun Glasses+Shirt","price":"₹2,499"},
+{"id":2,"image":"deal2.jpg","name":"Women T-Shirts","price":"₹1,499"},
+{"id":3,"image":"deal3.jpg","name":"Carrera Sunglasses+T-Shirts","price":"₹3,499"},
+{"id":4,"image":"deal4.jpg","name":"MiltonT shirt","price":"₹6,099"},
+{"id":5,"image":"deal5.jpg","name":"Black Hoodie","price":"₹3,499"}]
 
 const Allcomponents = () =>{
+  const checkButton = (id,data) => {
+    if(data.indexOf(id) === -1){
+      return false;
+    }else{
+      return true;
+    }
+  }
+  const addToCart = (id,data,setData) => {
+      console.log(id)
+    if(data.indexOf(id) === -1){
+      setData([...data,id]);
+    }else{
+      let a = [...data];
+      a.splice(a.indexOf(id),1);
+      console.log(a)
+      setData(a);
+    }
+  }
+  const [data,setData] = useContext(Creatingcontext);
+  
     return(
         <div>
              <Container></Container>
@@ -37,7 +60,7 @@ const Allcomponents = () =>{
                 <p>{i.price}</p>
               </div>
           </div>
-            <button class="button-description">Add to cart </button>
+            <button class="button-description" onClick={()=>addToCart(i.id,data,setData)}>{checkButton(i.id,data)?"Remove from cart" : "Add to cart"}</button>
           </div>)})}
       </Cartitem>
       <Deals>
@@ -51,7 +74,7 @@ const Allcomponents = () =>{
                 <p>{j.price}</p>
               </div>
               </div>
-              <button class="button-description">Add to cart </button>
+              <button class="button-description"onClick={()=>addToCart(j.id,data,setData)} >{checkButton(j.id,data)?"Remove from cart" : "Add to cart"} </button>
           
         </div>)})}
       </Deals>
